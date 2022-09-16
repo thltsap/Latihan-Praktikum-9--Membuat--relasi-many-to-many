@@ -14,6 +14,11 @@
                 <li class="list-group-item"><b>No_Handphone: </b>{{$Mahasiswa->no_handphone}}</li>
                 <li class="list-group-item"><b>Email: </b>{{$Mahasiswa->email}}</li>
                 <li class="list-group-item"><b>Tanggal_Lahir: </b>{{$Mahasiswa->tanggal_lahir}}</li> 
+                <td>
+                    @if(!is_null($Mahasiswa->foto))
+                        <img src="{{asset('storage/' . $Mahasiswa->foto)}}" width="100px">
+                    @endif
+                </td> 
                 </ul>
             </div>
             <a class="btn btn-success mx-3" href="{{ route('mahasiswa.index') }}">Kembali</a>

@@ -31,7 +31,7 @@
         <tr>
             <th>Nim</th>
             <th>Nama</th>
-            {{--  <th>Foto_Profil</th>  --}}
+            <th>Foto_Profil</th>
             <th>Kelas</th>
             <th>Jurusan</th>
             <th>No_Handphone</th>
@@ -43,11 +43,11 @@
         <tr>
             <td>{{$Mahasiswa->nim}}</td>                       
             <td>{{ $Mahasiswa->nama }}</td>
-            {{--  <td>
+            <td>
                 @if(!is_null($Mahasiswa->foto))
                     <img src="{{asset('storage/' . $Mahasiswa->foto)}}" width="100px">
                 @endif
-            </td>   --}}
+            </td> 
             <td>{{ $Mahasiswa->kelas->nama_kelas }}</td>
             <td>{{ $Mahasiswa->jurusan }}</td>
             <td>{{ $Mahasiswa->no_handphone }} </td>       

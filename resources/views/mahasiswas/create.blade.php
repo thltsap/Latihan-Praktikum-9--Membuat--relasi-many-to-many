@@ -28,10 +28,10 @@
                         <label for="Nama">Nama</label> 
                         <input type="Nama" name="Nama" class="form-control" id="Nama" aria-describedby="Nama" > 
                     </div>
-                    {{--  <div class="form-group">
+                    <div class="form-group">
                         <label for="Foto">Foto</label>
                         <input type="file" name="Foto" class="form-control-file" id="Foto" aria-describedby="Foto" value="{{old('Foto')}}">
-                    </div>  --}}
+                    </div>
                     <div class="form-group">
                         <label for="Kelas">Kelas</label>
                         <select name="Kelas" id="Kelas" class="form-control">

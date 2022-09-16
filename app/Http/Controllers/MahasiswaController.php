@@ -8,7 +8,7 @@ use App\Models\Mahasiswa;
 use App\Models\Kelas;
 use App\Models\Mahasiswa_MataKuliah;
 use Illuminate\Support\Facades\Storage;
-use Barryvdh\DomPDF\Facade as PDF;
+use \PDF;
 
 class MahasiswaController extends Controller
 {
@@ -64,7 +64,7 @@ class MahasiswaController extends Controller
         $request->validate([
             'Nim' => 'required',
             'Nama' => 'required',
-            // 'Foto' => 'required|mimes:jpg,png|dimensions:max_width=100,max_height=100',
+            'Foto' => 'required|mimes:jpg,png',
             'Kelas' => 'required',
             'Jurusan' => 'required',
             'No_Handphone' => 'required',
@@ -81,10 +81,10 @@ class MahasiswaController extends Controller
             $mahasiswa->tanggal_lahir = $request->get('Tanggal_Lahir');
 
              //Menyimpan gambar
-        //     if($request->file('Foto')){
-        //         $image_dir = $request->file('Foto')->store('images/mahasiswa/profil', 'public');
-        //         $mahasiswa->foto = $image_dir;
-        // }
+            if($request->file('Foto')){
+                $image_dir = $request->file('Foto')->store('images/mahasiswa/profil', 'public');
+                $mahasiswa->foto = $image_dir;
+        }
             
             $kelas = new Kelas();
             $kelas->id = $request->get('Kelas');
@@ -146,7 +146,7 @@ class MahasiswaController extends Controller
         $request->validate([
             'Nim' => 'required',
             'Nama' => 'required',
-            'Foto' => 'nullable|mimes:jpg,png|dimensions:max_width=100,max_height=100',
+            'Foto' => 'nullable',
             'Kelas' => 'required',
             'Jurusan' => 'required',
             'No_Handphone' => 'required',
